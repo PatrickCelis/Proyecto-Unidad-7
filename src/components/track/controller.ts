@@ -8,7 +8,7 @@ const prisma = new PrismaClient();
 export const store = async (req: Request, res: Response): Promise<void> => {
   try {
     const {name, artist, album, year, genre, duration} = req.body;
-    await prisma.track.create({ data :{
+    const track = await prisma.track.create({ data :{
             name,
             artist,
             album,
@@ -17,7 +17,7 @@ export const store = async (req: Request, res: Response): Promise<void> => {
             duration
     }});
 
-    res.status(201).json({ ok: true, message: "Track creado correctamente" });
+    res.status(201).json({ ok: true, data: track});
   } catch (error) {
     res.status(500).json({ ok: false, message: error });
   }

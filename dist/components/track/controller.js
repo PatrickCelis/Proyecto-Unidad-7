@@ -16,7 +16,7 @@ const prisma = new client_1.PrismaClient();
 const store = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { name, artist, album, year, genre, duration } = req.body;
-        yield prisma.track.create({ data: {
+        const track = yield prisma.track.create({ data: {
                 name,
                 artist,
                 album,
@@ -24,7 +24,7 @@ const store = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
                 genre,
                 duration
             } });
-        res.status(201).json({ ok: true, message: "Track creado correctamente" });
+        res.status(201).json({ ok: true, data: track });
     }
     catch (error) {
         res.status(500).json({ ok: false, message: error });
