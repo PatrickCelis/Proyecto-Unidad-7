@@ -29,15 +29,18 @@ CREATE TABLE "Playlist" (
 );
 
 -- CreateTable
-CREATE TABLE "TracksOnPlaylist" (
-    "trackId" INTEGER NOT NULL,
-    "playlistId" INTEGER NOT NULL,
-    "create_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-
-    PRIMARY KEY ("trackId", "playlistId"),
-    CONSTRAINT "TracksOnPlaylist_trackId_fkey" FOREIGN KEY ("trackId") REFERENCES "Track" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
-    CONSTRAINT "TracksOnPlaylist_playlistId_fkey" FOREIGN KEY ("playlistId") REFERENCES "Playlist" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+CREATE TABLE "_PlaylistToTrack" (
+    "A" INTEGER NOT NULL,
+    "B" INTEGER NOT NULL,
+    CONSTRAINT "_PlaylistToTrack_A_fkey" FOREIGN KEY ("A") REFERENCES "Playlist" ("id") ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT "_PlaylistToTrack_B_fkey" FOREIGN KEY ("B") REFERENCES "Track" ("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "_PlaylistToTrack_AB_unique" ON "_PlaylistToTrack"("A", "B");
+
+-- CreateIndex
+CREATE INDEX "_PlaylistToTrack_B_index" ON "_PlaylistToTrack"("B");

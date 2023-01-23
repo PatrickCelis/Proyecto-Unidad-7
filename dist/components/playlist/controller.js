@@ -14,15 +14,25 @@ const client_1 = require("@prisma/client");
 const prisma = new client_1.PrismaClient();
 // CREATE playlist
 const store = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const data = req.body;
-        yield prisma.playlist.create({ data: data });
-        res.status(201).json({ ok: true, message: "Playlist creado correctamente" });
-    }
-    catch (error) {
-        console.log(error);
-        res.status(500).json({ ok: false, message: error });
-    }
+    //     try {
+    const data = req.body;
+    const playlist = yield prisma.playlist.create({
+        include: {
+            track: true,
+        },
+        data: {
+            name: data.name,
+            user: { connect: { id: data.user_id } },
+            track: {
+                create: data.songs,
+            },
+        },
+    });
+    res.status(201).json({ ok: true, message: "Playlist creado correctamente" });
+    //     } catch(error) {
+    //         console.log(error)
+    //         res.status(500).json({ ok: false, message: error });
+    //     }
 });
 exports.store = store;
 const findAll = (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -40,11 +50,16 @@ const findAll = (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
 exports.findAll = findAll;
 const addTrackOnPlaylist = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { trackId, playlistId, create_at } = req.body;
-        yield prisma.tracksOnPlaylist.create({ data: {
-                trackId,
-                playlistId,
-                create_at: new Date(create_at)
+        const data = req.body;
+        const playlist = yield prisma.playlist.update({
+            where: {
+                id: data.id_playlist
+            },
+            include: {
+                track: true,
+            },
+            data: {
+                track: { connect: { id: data.id_song } }
             }
         });
         res.status(201).json({ ok: true, message: "Cancion agregada en playlist correctamente" });
