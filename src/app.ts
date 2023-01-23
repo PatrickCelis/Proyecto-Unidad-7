@@ -1,5 +1,5 @@
 import express, { type Application } from 'express';
-import * as ROUTER from "./componentes";
+import * as ROUTER from "./components";
 import cors from "cors";
 
 const app: Application = express();
