@@ -12,12 +12,12 @@ Evaluación unidad 7 Silabuz
 
 ## Objetivos:
 
-* 👉 Utilizar NodeJs y Express.
-* 👉 Las rutas deberán seguir el patrón REST.
-* 👉 Utilizar la librería Prisma.
-* 👉 Utilizar Typescript.
-* 👉 Utilizar SQLite.
-* 👉 Manejar git como equipo.
+* Utilizar NodeJs y Express.
+* Las rutas deberán seguir el patrón REST.
+* Utilizar la librería Prisma.
+* Utilizar Typescript.
+* Utilizar SQLite.
+* Manejar git como equipo.
 
 ## Proyecto otorgado por:
 <hr />
