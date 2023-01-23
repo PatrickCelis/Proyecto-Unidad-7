@@ -1,6 +1,14 @@
-# Proyecto-Unidad-7
-Evaluación unidad 7 Silabuz
+# Proyecto Unidad 7
+Elaboración de playlists.
 
+<div align="center">
+⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠
+Proyecto Individual.
+Este proyecto aún no esta terminado, por favor considerar el código y lo que se ha avanzado :(.
+ 
+⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠
+ 
+  </div>
  <div align="center">
  
 ![Playlist](https://playlistpush.com/blog/content/images/2020/03/Screen-Shot-2019-04-05-at-2.06.17-PM-1.png)
