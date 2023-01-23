@@ -3,7 +3,9 @@ Elaboración de playlists.
 
 <div align="center">
 ⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠
+ 
 Proyecto Individual.
+ 
 Este proyecto aún no esta terminado, por favor considerar el código y lo que se ha avanzado :(.
  
 ⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠
