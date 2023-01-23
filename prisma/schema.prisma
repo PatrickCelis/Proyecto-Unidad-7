@@ -10,21 +10,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-generator client {
-  provider = "prisma-client-js"
-}
-
-datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
-}
-
 model User {
   id    Int     @id @default(autoincrement())
   name  String?
   email String  @unique
-  last_session  DateTime
-  update_at     DateTime
+  password      String
+  last_session  DateTime?
+  update_at     DateTime?
   date_born     DateTime
   playlists     Playlist[]
 }
