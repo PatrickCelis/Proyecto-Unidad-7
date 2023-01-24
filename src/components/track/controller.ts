@@ -12,7 +12,7 @@ export const store = async (req: Request, res: Response): Promise<void> => {
             name,
             artist,
             album,
-            year: new Date(year),
+            year,
             genre,
             duration
     }});
@@ -66,7 +66,7 @@ export  const update_track = async (req: Request, res: Response) => {
         name,
         artist,
         album,
-        year: new Date(year),
+        year,
         genre,
         duration
     }});
